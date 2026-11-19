@@ -1,14 +1,31 @@
 {
-  "cli": { "version": ">= 16.0.0", "appVersionSource": "local" },
+  "cli": {
+    "version": ">= 16.0.0",
+    "appVersionSource": "local"
+  },
   "build": {
     "apk": {
       "distribution": "internal",
-      "android": { "buildType": "apk", "credentialsSource": "local" },
-      "env": { "EXPO_PUBLIC_API_URL": "https://uru-api.prathviholla67.workers.dev/api/v1" }
+      "android": {
+        "buildType": "apk",
+        "credentialsSource": "local"
+      },
+      "env": {
+        "EXPO_PUBLIC_API_URL": "https://uru-api.prathviholla67.workers.dev/api/v1",
+        "EXPO_PUBLIC_SUPABASE_URL": "https://mqawjsrmsoxmeqwqibgn.supabase.co",
+        "EXPO_PUBLIC_SUPABASE_ANON_KEY": "sb_publishable_pJrG1k7Fl48I62oVlwcEog_IfuvnitL"
+      }
     },
     "production": {
-      "android": { "buildType": "app-bundle", "credentialsSource": "local" },
-      "env": { "EXPO_PUBLIC_API_URL": "https://uru-api.prathviholla67.workers.dev/api/v1" }
+      "android": {
+        "buildType": "app-bundle",
+        "credentialsSource": "local"
+      },
+      "env": {
+        "EXPO_PUBLIC_API_URL": "https://uru-api.prathviholla67.workers.dev/api/v1",
+        "EXPO_PUBLIC_SUPABASE_URL": "https://mqawjsrmsoxmeqwqibgn.supabase.co",
+        "EXPO_PUBLIC_SUPABASE_ANON_KEY": "sb_publishable_pJrG1k7Fl48I62oVlwcEog_IfuvnitL"
+      }
     }
   }
 }

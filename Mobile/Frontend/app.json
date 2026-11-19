@@ -48,6 +48,17 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    }
+    },
+    "extra": {
+      "router": {
+        "asyncRoutes": {
+          "web": true
+        }
+      },
+      "eas": {
+        "projectId": "b43b452c-596f-4dac-afc9-4127cc8b2349"
+      }
+    },
+    "owner": "prathvirajholla123"
   }
 }
