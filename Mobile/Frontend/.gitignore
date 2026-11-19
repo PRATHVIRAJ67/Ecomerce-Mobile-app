@@ -44,3 +44,7 @@ example
 
 # local env (publishable values only, but keep per-machine)
 .env
+
+# EAS local signing credentials (contains keystore password) — never commit
+credentials.json
+*.jks

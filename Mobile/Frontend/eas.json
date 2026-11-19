@@ -1,0 +1,14 @@
+{
+  "cli": { "version": ">= 16.0.0", "appVersionSource": "local" },
+  "build": {
+    "apk": {
+      "distribution": "internal",
+      "android": { "buildType": "apk", "credentialsSource": "local" },
+      "env": { "EXPO_PUBLIC_API_URL": "https://uru-api.prathviholla67.workers.dev/api/v1" }
+    },
+    "production": {
+      "android": { "buildType": "app-bundle", "credentialsSource": "local" },
+      "env": { "EXPO_PUBLIC_API_URL": "https://uru-api.prathviholla67.workers.dev/api/v1" }
+    }
+  }
+}
