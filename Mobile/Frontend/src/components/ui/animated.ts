@@ -1,10 +1,7 @@
-import { cssInterop } from 'nativewind';
-import { Pressable } from 'react-native';
 import Animated from 'react-native-reanimated';
 
-/** Reanimated components that accept NativeWind `className` (merged into `style`). */
+/**
+ * Reanimated view for motion only. Do NOT pass `className` to it: NativeWind does not style
+ * Reanimated components in Android release builds. Put classes on a plain View inside/outside.
+ */
 export const AView = Animated.View;
-export const APressable = Animated.createAnimatedComponent(Pressable);
-
-cssInterop(AView, { className: 'style' });
-cssInterop(APressable, { className: 'style' });

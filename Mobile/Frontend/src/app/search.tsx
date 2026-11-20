@@ -75,7 +75,7 @@ export default function SearchScreen() {
       </View>
 
       {!enabled ? (
-        <AView entering={FadeIn.duration(200)} className="px-5 pt-3">
+        <AView entering={FadeIn.duration(200)} style={{ paddingHorizontal: 20, paddingTop: 12 }}>
           {recent.length > 0 && (
             <View className="mb-7">
               <View className="mb-3 flex-row items-center justify-between">

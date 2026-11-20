@@ -1,7 +1,7 @@
 import { router } from 'expo-router';
 import { ChevronLeft, RotateCw, type LucideIcon } from 'lucide-react-native';
 import { useEffect, useState, type ComponentRef, type ReactNode, type Ref } from 'react';
-import { ActivityIndicator, TextInput, View, type TextInputProps, type ViewStyle } from 'react-native';
+import { ActivityIndicator, StyleSheet, TextInput, View, type TextInputProps, type ViewStyle } from 'react-native';
 import { useAnimatedStyle, useReducedMotion, useSharedValue, withRepeat, withTiming } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { errorMessage } from '@/lib/api';
@@ -163,7 +163,11 @@ export function Skeleton({ className = '', style }: { className?: string; style?
     if (!reduced) o.set(withRepeat(withTiming(1, { duration: 850 }), -1, true));
   }, [o, reduced]);
   const a = useAnimatedStyle(() => ({ opacity: o.get() }));
-  return <AView accessibilityElementsHidden importantForAccessibility="no-hide-descendants" className={`rounded-2xl bg-cream-dark ${className}`} style={[a, style]} />;
+  return (
+    <View accessibilityElementsHidden importantForAccessibility="no-hide-descendants" className={`overflow-hidden rounded-2xl ${className}`} style={style}>
+      <AView style={[StyleSheet.absoluteFill, { backgroundColor: C.creamDark }, a]} />
+    </View>
+  );
 }
 
 export function EmptyState({ icon: Icon, title, message, action }: { icon: LucideIcon; title: string; message?: string; action?: ReactNode }) {

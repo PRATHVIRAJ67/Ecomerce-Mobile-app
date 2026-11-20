@@ -25,9 +25,12 @@ export function Toaster() {
             layout={LinearTransition}
             accessibilityLiveRegion="polite"
             accessibilityRole="alert"
-            className={`w-full max-w-md flex-row items-center gap-3 rounded-2xl px-4 py-3 ${t.tone === 'error' ? 'bg-danger' : 'bg-forest-800'}`}
-            style={{ shadowColor: '#000', shadowOpacity: 0.2, shadowRadius: 16, shadowOffset: { width: 0, height: 8 }, elevation: 10 }}
+            style={{ width: '100%', maxWidth: 448 }}
           >
+            <View
+              className={`flex-row items-center gap-3 rounded-2xl px-4 py-3 ${t.tone === 'error' ? 'bg-danger' : 'bg-forest-800'}`}
+              style={{ shadowColor: '#000', shadowOpacity: 0.2, shadowRadius: 16, shadowOffset: { width: 0, height: 8 }, elevation: 10 }}
+            >
             <Icon size={18} color={t.tone === 'success' ? C.terracotta200 : C.cream} />
             <Txt weight="medium" className="flex-1 text-[14px] leading-5 text-cream">
               {t.message}
@@ -50,6 +53,7 @@ export function Toaster() {
                 <X size={16} color={C.cream} />
               </Pressable>
             )}
+            </View>
           </AView>
         );
       })}

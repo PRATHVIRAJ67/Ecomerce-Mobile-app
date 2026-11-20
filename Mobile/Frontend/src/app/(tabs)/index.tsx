@@ -45,7 +45,7 @@ export default function HomeScreen() {
   const cardW = (width - 40 - 12) / 2;
 
   return (
-    <View className="flex-1 bg-cream">
+    <View className="flex-1 bg-cream" style={{ paddingTop: insets.top }}>
       <ScrollView
         contentContainerStyle={{ paddingBottom: bottom + 8 }}
         showsVerticalScrollIndicator={false}
@@ -53,7 +53,7 @@ export default function HomeScreen() {
         stickyHeaderIndices={[1]}
       >
         {/* Header */}
-        <View style={{ paddingTop: insets.top + 10 }} className="px-5 pb-3">
+        <View className="px-5 pb-3 pt-2.5">
           <View className="flex-row items-start justify-between">
             <View className="flex-1 pr-3">
               <Txt className="text-[13px] text-muted">{greeting()}{firstName ? ',' : ''}</Txt>

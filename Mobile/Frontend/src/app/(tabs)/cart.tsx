@@ -172,7 +172,11 @@ const CartRow = memo(function CartRow({ line }: { line: CartLine }) {
   const busy = useCartPending(p.id);
   const over = p.in_stock && line.quantity > p.max_order_quantity;
   return (
-    <AView exiting={FadeOut.duration(160)} layout={LinearTransition.springify().damping(18)} className="mx-5 flex-row gap-3.5 rounded-3xl border border-line/70 bg-white p-3">
+    <AView
+      exiting={FadeOut.duration(160)}
+      layout={LinearTransition.springify().damping(18)}
+      style={{ marginHorizontal: 20, flexDirection: 'row', gap: 14, borderRadius: 24, borderWidth: 1, borderColor: 'rgba(230,224,210,0.7)', backgroundColor: C.white, padding: 12 }}
+    >
       <Pressable accessibilityRole="link" accessibilityLabel={`Open ${p.name}`} onPress={() => router.push({ pathname: '/product/[slug]', params: { slug: p.slug } })}>
         <ProductImage uri={p.images[0]?.url} seed={p.category_slug ?? p.slug} hints={[p.category_name, p.name]} style={{ width: 92, height: 108, borderRadius: 18, opacity: line.available ? 1 : 0.55 }} />
       </Pressable>

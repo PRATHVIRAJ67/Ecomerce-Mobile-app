@@ -66,7 +66,7 @@ export default function Onboarding() {
                   <Icon size={30} color={C.cream} strokeWidth={1.5} />
                 </View>
               </View>
-              <AView key={`t-${index === i}`} entering={FadeInDown.duration(450)} className="px-7 pt-8">
+              <AView key={`t-${index === i}`} entering={FadeInDown.duration(450)} style={{ paddingHorizontal: 28, paddingTop: 32 }}>
                 <Txt weight="semibold" className="text-[11px] uppercase tracking-[2.5px] text-terracotta-600">
                   {item.eyebrow}
                 </Txt>

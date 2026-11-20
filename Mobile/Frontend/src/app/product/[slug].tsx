@@ -117,7 +117,7 @@ export default function ProductScreen() {
         </View>
 
         {/* Details sheet */}
-        <AView entering={FadeInDown.duration(380)} className="-mt-7 rounded-t-[32px] bg-cream px-5 pt-6">
+        <AView entering={FadeInDown.duration(380)} style={{ marginTop: -28, borderTopLeftRadius: 32, borderTopRightRadius: 32, backgroundColor: C.cream, paddingHorizontal: 20, paddingTop: 24 }}>
           {product.category_name ? (
             <Pressable accessibilityRole="link" onPress={() => router.push({ pathname: '/category/[slug]', params: { slug: product.category_slug! } })}>
               <Eyebrow>{product.category_name}</Eyebrow>

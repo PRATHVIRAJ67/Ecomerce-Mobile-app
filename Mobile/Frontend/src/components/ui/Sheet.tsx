@@ -1,6 +1,7 @@
 import { X } from 'lucide-react-native';
 import { useEffect, useState, type ReactNode } from 'react';
-import { KeyboardAvoidingView, Modal, Platform, Pressable, ScrollView, useWindowDimensions, View } from 'react-native';
+import { KeyboardAvoidingView, Modal, Platform, Pressable, ScrollView, StyleSheet, useWindowDimensions, View } from 'react-native';
+import { C } from '@/lib/theme';
 import { GestureDetector, GestureHandlerRootView, usePanGesture } from 'react-native-gesture-handler';
 import { runOnJS, useAnimatedStyle, useReducedMotion, useSharedValue, withSpring, withTiming } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -62,11 +63,11 @@ export function Sheet({ open, onClose, title, children, footer, maxHeight = 0.88
   return (
     <Modal visible transparent animationType="none" statusBarTranslucent navigationBarTranslucent onRequestClose={onClose}>
       <GestureHandlerRootView style={{ flex: 1 }}>
-        <AView className="absolute inset-0 bg-forest-900/45" style={backdropStyle}>
+        <AView style={[StyleSheet.absoluteFill, { backgroundColor: 'rgba(10,42,29,0.45)' }, backdropStyle]}>
           <Pressable style={{ flex: 1 }} onPress={onClose} accessibilityLabel="Close" accessibilityRole="button" />
         </AView>
         <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined} style={{ flex: 1, justifyContent: 'flex-end' }} pointerEvents="box-none">
-          <AView accessibilityViewIsModal className="rounded-t-[28px] bg-cream" style={[{ maxHeight: height * maxHeight, paddingBottom: footer ? 0 : insets.bottom + 12 }, panelStyle]}>
+          <AView accessibilityViewIsModal style={[{ borderTopLeftRadius: 28, borderTopRightRadius: 28, backgroundColor: C.cream, maxHeight: height * maxHeight, paddingBottom: footer ? 0 : insets.bottom + 12 }, panelStyle]}>
             <GestureDetector gesture={pan}>
               <View className="px-5 pb-2 pt-3">
                 <View className="mb-2 h-1.5 w-11 self-center rounded-full bg-line" accessibilityLabel="Drag down to close" />

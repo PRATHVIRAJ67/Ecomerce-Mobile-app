@@ -74,7 +74,7 @@ export default function OtpScreen() {
     <AuthShell title={title} subtitle={`We sent a ${LENGTH}-digit code to ${email}. It expires in a few minutes.`}>
       <FormError message={error} />
       <Pressable onPress={() => input.current?.focus()} accessibilityLabel={`Verification code, ${code.length} of ${LENGTH} digits entered`}>
-        <AView style={shakeStyle} className="flex-row justify-between">
+        <AView style={[{ flexDirection: 'row', justifyContent: 'space-between' }, shakeStyle]}>
           {Array.from({ length: LENGTH }, (_, i) => {
             const filled = i < code.length;
             const active = i === code.length;

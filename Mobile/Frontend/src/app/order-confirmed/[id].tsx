@@ -41,7 +41,7 @@ function Confirmed() {
   return (
     <ScrollView className="flex-1 bg-cream" contentContainerStyle={{ paddingTop: insets.top + 40, paddingBottom: insets.bottom + 30, paddingHorizontal: 20 }}>
       <View className="items-center">
-        <AView style={ring} className={`h-28 w-28 items-center justify-center rounded-full ${awaiting ? 'bg-warning-tint' : 'bg-forest-700'}`}>
+        <AView style={[{ width: 112, height: 112, alignItems: 'center', justifyContent: 'center', borderRadius: 56, backgroundColor: awaiting ? '#FCF3DC' : C.forest }, ring]}>
           {awaiting ? <Clock size={48} color={C.warning} /> : <Check size={54} color={C.cream} strokeWidth={2.6} />}
         </AView>
         <Display className="mt-7 text-center text-[32px] leading-[38px]">{awaiting ? 'Almost there…' : 'Thank you!'}</Display>

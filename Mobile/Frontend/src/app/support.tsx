@@ -73,7 +73,7 @@ export default function SupportScreen() {
                   <ChevronDown size={18} color={C.muted} style={{ transform: [{ rotate: isOpen ? '180deg' : '0deg' }] }} />
                 </Pressable>
                 {isOpen ? (
-                  <AView entering={FadeIn.duration(200)} className="px-4 pb-4">
+                  <AView entering={FadeIn.duration(200)} style={{ paddingHorizontal: 16, paddingBottom: 16 }}>
                     <Txt className="text-[14px] leading-[21px] text-ink-soft">{f.a}</Txt>
                   </AView>
                 ) : null}

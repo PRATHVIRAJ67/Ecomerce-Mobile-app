@@ -47,7 +47,7 @@ export function TabBar({ state, emitter, navigateToTab, insets }: BottomTabBarPr
         className="flex-row rounded-[30px] border border-white/10 bg-forest-800 p-1.5"
         style={shadow.lift}
       >
-        {slot > 0 && <AView className="absolute bottom-1.5 left-1.5 top-1.5 rounded-[24px] bg-forest-600" style={[{ width: slot }, indicator]} />}
+        {slot > 0 && <AView style={[{ position: 'absolute', top: 6, bottom: 6, left: 6, borderRadius: 24, backgroundColor: C.forest600, width: slot }, indicator]} />}
         {routes.map((route) => {
           const meta = META[route.name]!;
           const focused = route.key === state.routes[state.index]?.key;
